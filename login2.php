@@ -1,13 +1,12 @@
 <?php
 require 'inc/head.php';
 
-if (isset($_POST['loginname']) && !empty($_POST['loginname']))
+if (isset($_POST['loginname']))
 {
     $_SESSION['loginname'] = $_POST['loginname'];
     header( "Location: index.php");
+
 }
-
-
 ?>
 <div class="container" style="margin-top:40px">
 <div class="row">
@@ -17,7 +16,7 @@ if (isset($_POST['loginname']) && !empty($_POST['loginname']))
         <strong> Sign in to continue</strong>
       </div>
       <div class="panel-body">
-        <form role="form" action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+        <form role="form" action="#" method="POST">
           <fieldset>
             <div class="row">
               <div class="center-block">
@@ -43,8 +42,8 @@ if (isset($_POST['loginname']) && !empty($_POST['loginname']))
           </fieldset>
         </form>
       </div>
-      <div class="panel-footer ">
-        Don't have an account ? <a href="login2.php" onClick="">Too bad !</a>
+      <div class="panel-footer">
+          <p class="login2"> Please log in now ! </p>
       </div>
             </div>
   </div>

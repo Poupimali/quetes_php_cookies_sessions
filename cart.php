@@ -1,7 +1,16 @@
-<?php require 'inc/head.php'; ?>
+<?php
+require 'inc/head.php';
+
+?>
 <section class="cookies container-fluid">
     <div class="row">
-      TODO : Display shopping cart items from $_SESSION here.
+        <?php
+            foreach ($_SESSION['totalCookies'] as $cookie => $number){
+                echo '<p class ="cookie">' . $cookie . ' : ' . $number . '</br></p>';
+            }
+        ?>
     </div>
 </section>
-<?php require 'inc/foot.php'; ?>
+<?php
+
+require 'inc/foot.php'; ?>

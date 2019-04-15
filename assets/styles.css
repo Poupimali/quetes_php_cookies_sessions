@@ -5,6 +5,7 @@ body {
 h1, h2, h3, h4,
 strong {
   font-family: 'Kaushan Script', cursive;
+    font-size: 2rem;
 }
 
 .navbar-brand{
@@ -29,6 +30,18 @@ strong {
 
 .cookies {
     margin-top:1em;
+}
+
+.login{
+    text-decoration: underline;
+    border: 1px solid #f0ad4e;
+    border-radius: 10px;
+    margin-right : 10px;
+}
+
+.login2{
+    color: #f0ad4e;
+    font-weight: bold;
 }
 
 section.cookies{
