@@ -1,19 +1,19 @@
 <?php
 require 'inc/head.php';
 
-// si à l'ouverture de la session il n'y a pas d'ajout dans le panier, alors le panier est un tableau vide
+/*/ si à l'ouverture de la session il n'y a pas d'ajout dans le panier, alors le panier est un tableau vide
 if (!isset($_SESSION['totalCookies'])){
     $_SESSION['totalCookies'] = [];
     $_SESSION['totalCookies'][46] = 0;
     $_SESSION['totalCookies'][36] = 0;
     $_SESSION['totalCookies'][58] = 0;
     $_SESSION['totalCookies'][32] = 0;
-}
+}*/
 
 //si tu ajoutes un cookie, tu le rajoutes dans le panier sinon il n'y a rien dans le panier
 if (isset($_GET['add_to_cart'])){
 
-    //si je rajoute la card cookie 46, elle est rajoutée dans le panier session un cookie 46
+    /*/si je rajoute la card cookie 46, elle est rajoutée dans le panier session un cookie 46
     if ($_GET['add_to_cart'] == 46)
     {
         $_SESSION['totalCookies'][$_GET['add_to_cart']] +=1;
@@ -30,9 +30,17 @@ if (isset($_GET['add_to_cart'])){
     {
         $_SESSION['totalCookies'][$_GET['add_to_cart']] +=1;
     }
-}
+    */
 
-var_dump($_SESSION['totalCookies']);
+    if(!isset($_SESSION['totalCookies'][$_GET['add_to_cart']])) {
+        $_SESSION['totalCookies'][$_GET['add_to_cart']] = 0;
+    }
+
+    $_SESSION['totalCookies'][$_GET['add_to_cart']] += 1;
+
+    header('Location:/');
+
+}
 
 ?>
     <section class="cookies container-fluid">
